@@ -1,0 +1,478 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e6f0fa;
+    /* fondo general suave */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* El wrapper crece para empujar el footer hacia abajo */
+.wrapper {
+    flex: 1;
+    /* ocupa todo el espacio disponible */
+}
+
+
+
+/***************************************** HEADER **************************************/
+header {
+    width: 100%;
+    padding: 25px 10px;
+    box-sizing: border-box;
+    background:
+            linear-gradient(135deg, rgba(255, 255, 255, 0.05) 25%, transparent 28%),
+            linear-gradient(225deg, rgba(255, 255, 255, 0.04) 25%, transparent 28%),
+            linear-gradient(135deg, #356fa1, #558fbf);
+    background-size: 1px px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fila Superior */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Titulo portfolio */
+.portfolio-titulo h5 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/* Menu */
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    font-size: 1rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.menu ul li a:hover {
+    color: #ffd700;
+    transform: scale(1.05);
+}
+
+/* Menu hover animado */
+.menu ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: #ffd700;
+    transition: 0.3s;
+}
+
+.menu ul li a:hover::after {
+    width: 100%;
+}
+
+/* Titulo principal */
+.titulo {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInDown 1s forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeInDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.titulo h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.titulo h5 {
+    font-size: 1.1rem;
+    margin: 5px 0 0 0;
+}
+
+/* Responsive media query */
+@media (max-width: 600px) {
+    .header-top {
+        flex-direction: row;
+        /* mantenemos horizontal */
+        align-items: center;
+        gap: 10px;
+    }
+
+    .menu ul {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+
+    .titulo h1 {
+        font-size: 2.2rem;
+    }
+}
+/***************************************** MAIN **************************************/
+/**** Presentacion ****/
+.presentacion {
+    font-size: 1rem;
+    text-align: center;
+    padding: 20px 50px;
+    background-color: #e6f0fa;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 1000px;
+}
+
+/***** Tecnologias *****/
+.tecnologias {
+    margin: 40px auto;
+    padding: 30px;
+    max-width: 1200px;
+    background-color: #f3f8ff;
+    border-radius: 10px;
+}
+
+/* Título */
+.tecnologias h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #007acc;
+}
+
+/* Contenedor de columnas */
+.tecnologias-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Cada grupo de tecnología */
+.tecnologia-grupo {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(145deg, #ffffff, #f3f8ff);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s forwards;
+}
+
+/* Animación al hover: levitar y degradado suave */
+.tecnologia-grupo:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(145deg, #f0f8ff, #ffffff);
+}
+
+.tecnologia-grupo:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.tecnologia-grupo:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.tecnologia-grupo:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.tecnologia-grupo:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Títulos de cada grupo */
+.tecnologia-grupo h4 {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #007acc;
+}
+
+/* Elementos dentro de cada grupo */
+.tecnologia-grupo p {
+    text-align: center;
+    margin: 4px 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Responsive: 2 columnas */
+@media (max-width: 900px) {
+    .tecnologias-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Responsive: 1 columna */
+@media (max-width: 500px) {
+    .tecnologias-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/***************************************** FORMACION.HTML **************************************/
+.formacion-bloque1, .formacion-bloque2 {
+    background-color: #f3f8ff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1000px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.formacion-bloque1 h1, .formacion-bloque2 h1 {
+    color: #007acc;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.formacion-bloque1-descripcion ul {
+    list-style: none;
+    padding: 12px 0;
+    margin: 0;
+}
+
+.formacion-bloque1 ul li {
+    margin: 1px 0;
+}
+
+.formacion-bloque1-descripcion ul li p {
+    margin: 11px;
+    font-size: 1rem;
+    color: #555;
+    display: inline-block;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.categoria {
+    font-weight: bold;
+    color: #007acc;
+    margin-right: 2px;
+}
+
+.formacion-bloque1-descripcion ul li p,
+.formacion-bloque2 p {
+    transition: transform 0.3s, color 0.3s;
+}
+
+.formacion-bloque1-descripcion ul li p:hover,
+.formacion-bloque2 p:hover {
+    transform: translateX(5px);
+    color: #007acc;
+}
+
+/***************************************** PROYECTOS.HTML **************************************/
+
+.main {
+    padding: 30px 20px;
+}
+
+/* Proyectos */
+.proyecto {
+    background-color: #f3f8ff;
+    border-radius: 12px;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 1100px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover del contenedor */
+.proyecto:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Titulo del Proyecto */
+.proyecto-titulo {
+    text-align: center;
+    font-size: 2rem;
+    color: #007acc;
+    margin-bottom: 25px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInDown 0.8s forwards;
+}
+
+/* Subapartados */
+.proyecto-descripcion,.proyecto-tecnologias,.proyecto-aprender {
+    margin: 25px auto;
+    text-align: center;
+    max-width: 900px;
+}
+
+/* Subtitulos */
+.proyecto-descripcion h4,
+.proyecto-tecnologias h4,
+.proyecto-aprender h4 {
+    font-size: 1.3rem;
+    color: #007acc;
+    margin-bottom: 10px;
+}
+
+/* Texto */
+.proyecto-descripcion p, .proyecto-tecnologias p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/**** Listas ****/
+
+.proyecto-aprender ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+}
+
+/* Grid horizontal */
+.proyecto-aprender ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* Cada elemento como tarjeta */
+.proyecto-aprender ul li {
+    background: linear-gradient(145deg, #ffffff, #f0f8ff);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    font-size: 0.95rem;
+    color: #555;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover tarjetas */
+.proyecto-aprender ul li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    color: #007acc;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .proyecto-titulo {
+        font-size: 1.6rem;
+    }
+    .proyecto {
+        padding: 20px;
+    }
+}
+
+/***************************************** CONTACTO **************************************/
+.contacto p {
+    text-align: center;
+    padding: 25px 0;
+
+
+}
+.contacto-links {
+    display: flex;
+    justify-content: center;
+    gap: 110px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+/* Card redonda */
+.contacto-card {
+    width: 140px;
+    height: 140px;
+    background-color: #f3f8ff;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #007acc;
+    font-weight: bold;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.35s, box-shadow 0.35s, background-color 0.35s;
+}
+
+/* Texto */
+.contacto-card span {
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+/* Hover */
+.contacto-card:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    background-color: #e6f1ff;
+}
+
+/* Icono */
+.contacto-card svg {
+    transition: transform 0.4s;
+}
+
+.contacto-card:hover svg {
+    transform: scale(1.2);
+}
+
+/***************************************** FOOTER **************************************/
+footer {
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%),
+        linear-gradient(225deg, rgba(255, 255, 255, 0.04) 25%, transparent 25%),
+        linear-gradient(135deg, #356fa1, #558fbf);
+    background-size: 1px 1px;
+    color: #fff;
+    text-align: center;
+    padding: 20px 15px;
+    font-size: 0.9rem;
+    border-top: 2px solid #00bfff;
+}
+
+footer p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    footer {
+        font-size: 0.85rem;
+        padding: 15px 10px;
+    }
+}
