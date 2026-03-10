@@ -1,118 +1,104 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyectos</title>
+    <title>Proyectos — Portfolio</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
     <div class="wrapper">
         <header>
-            <!--Fila superior Cabecera: Título y Menú-->
             <div class="header-top">
                 <div class="portfolio-titulo">
                     <h5>Portfolio</h5>
                 </div>
                 <nav class="menu">
+                    <button class="menu-toggle" onclick="this.closest('nav').classList.toggle('open')"
+                        aria-label="Abrir menú">
+                        <span></span><span></span><span></span>
+                    </button>
                     <ul>
                         <li><a href="index.html">Inicio</a></li>
                         <li><a href="formacion.html">Formación</a></li>
-                        <li><a href="proyectos.html">Proyectos</a></li>
+                        <li><a href="proyectos.html" class="active">Proyectos</a></li>
                         <li><a href="contacto.html">Contacto</a></li>
                     </ul>
                 </nav>
             </div>
-            <!--Título-->
             <div class="titulo">
                 <h1>Proyectos</h1>
             </div>
         </header>
-        <main>
+
+        <main class="main">
+
+            <!-- PROYECTO RESET -->
             <div class="proyecto">
-                <h1 class="proyecto-titulo">Login + Registro con sesiones</h1>
-                <div class="proyecto-descripcion">
-                    <h4>Descripción</h4>
-                    <p>He desarrollado un sistema de registro y login implementando el patrón MVC y gestión de sesiones en PHP.
-                        El sistema
-                        almacena temporalmente la información de los usuarios mediante sesiones activas, incorporando
-                        validaciones de datos y un
-                        control básico de errores para garantizar la seguridad y funcionalidad del proceso de autenticación.</p>
-                </div>
-                <div class="proyecto-tecnologias">
-                    <h4>Tecnologías utilizadas</h4>
-                    <p>PHP - HTML - CSS</p>
-                </div>
-                <div class="proyecto-aprender">
-                    <h4>Qué aprendí</h4>
-                    <ul>
-                        <li>Implementar el patrón MVC en proyectos PHP</li>
-                        <li>Gestionar sesiones de usuario</li>
-                        <li>Validar datos de formularios y manejar errores</li>
-                        <li>Organizar el código separando lógica y presentación</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="proyecto">
-                <h1 class="proyecto-titulo">Páginas webs básicas</h1>
-                <div class="proyecto-descripcion">
-                    <h4>Descripción</h4>
-                    <p>He desarrollado páginas web sencillas como ejercicio práctico para dominar la estructura semántica de
-                        HTML y la
-                        aplicación de estilos con CSS. Durante este proceso, me he enfocado en crear contenido bien organizado y
-                        diseños
-                        funcionales que prioricen la usabilidad y la claridad visual.</p>
-                </div>
-                <div class="proyecto-tecnologias">
-                    <h4>Tecnologías utilizadas</h4>
-                    <p>HTML - CSS</p>
-                </div>
-                <div class="proyecto-aprender">
-                    <h4>Qué aprendí</h4>
-                    <ul>
-                        <li>Estructurar contenido con HTML</li>
-                        <li>Aplicar estilos CSS básicos y diseño responsivo simple</li>
-                        <li>Organizar proyectos de forma limpia y legible</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="proyecto">
-                <h1 class="proyecto-titulo">Prácticas de base de datos</h1>
-                <div class="proyecto-descripcion">
-                    <h4>Descripción</h4>
-                    <p>Durante el curso, he trabajado en el diseño y modelado de bases de datos relacionales, desarrollando
-                        bases de datos
-                        funcionales en MySQL a través de diversas prácticas.
-                        Las prácticas incluyen:</p>
-                    <div class="proyecto-aprender">
-                        <ul>
-                            <li>Creación de modelos entidad-relacón (MER)</li>
-                            <li>Transformación a modelo relacional</li>
-                            <li>Normalización de tablas para eliminar redundancias</li>
-                            <li>Implementación inicial de bases de datos y tablas en MySQL</li>
-                        </ul>
+
+                <!-- Preview 3D -->
+                <div class="proyecto-preview-scene">
+                    <div class="proyecto-preview-card">
+                        <a href="https://reset.infinityfree.me/" target="_blank" rel="noopener noreferrer"
+                            class="proyecto-browser-link">
+                            <div class="proyecto-browser">
+                                <div class="browser-bar">
+                                    <div class="browser-dots">
+                                        <span class="bdot bdot-r"></span>
+                                        <span class="bdot bdot-y"></span>
+                                        <span class="bdot bdot-g"></span>
+                                    </div>
+                                    <div class="browser-url">https://reset.infinityfree.me</div>
+                                </div>
+                                <div class="browser-screen">
+                                    <img src="img/reset-ong.png" alt="Preview RESET ONG"
+                                        onerror="this.style.display='none'; this.parentElement.classList.add('screen-placeholder')">
+                                    <div class="screen-fade"></div>
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
-                <div class="proyecto-tecnologias">
-                    <h4>Tecnologías utilizadas</h4>
-                    <p>MySQL - Diagramas MER - Modelo relacional</p>
+
+                <!-- Info del proyecto -->
+                <div class="proyecto-info">
+                    <div class="proyecto-tag">Proyecto de clase · DAW</div>
+                    <h1 class="proyecto-titulo">RESET ONG</h1>
+
+                    <div class="proyecto-descripcion">
+                        <p>Aplicación web creada para una ONG ficticia como proyecto de clase. Permite gestionar
+                            información sobre la organización, sus proyectos y sus usuarios, con diferentes roles según
+                            el tipo de acceso.</p>
+                        <p>Desarrollada con PHP y conectada a una base de datos real, con una interfaz construida en
+                            HTML y Tailwind CSS, y pequeños toques de JavaScript para mejorar la experiencia de uso.</p>
+                        <p>Un proyecto que me ha permitido trabajar por primera vez con una aplicación completa de
+                            principio a fin, combinando diseño, lógica de servidor y base de datos.</p>
+                    </div>
+
+                    <div class="proyecto-stack">
+                        <span class="stack-pill">PHP</span>
+                        <span class="stack-pill">HTML5</span>
+                        <span class="stack-pill">Tailwind CSS</span>
+                        <span class="stack-pill">MySQL</span>
+                        <span class="stack-pill">JavaScript</span>
+                    </div>
                 </div>
-                <div class="proyecto-aprender">
-                    <h4>Qué aprendí</h4>
-                    <ul>
-                        <li>Diseñar correctamente la estructura de una base de datos</li>
-                        <li>Convertir un modelo conceptual a un modelo relacional</li>
-                        <li>Aplicar principios de normalización para mejorar la eficiencia de la base de datos</li>
-                        <li>Crear tablas y relaciones básicas en MySQL</li>
-                    </ul>
-                </div>
+
             </div>
+            <!-- Más proyectos pueden ir aquí -->
+
         </main>
     </div>
+
     <footer>
-        <p>Este portfolio refleja mi nivel actual como estudiante y lo iré actualizando conforme vaya aprendiendo más.</p>
+        <p>Este portfolio refleja mi nivel actual como estudiante y lo iré actualizando conforme vaya aprendiendo más.
+        </p>
     </footer>
-    </body>
 </body>
+
 </html>
